@@ -32,21 +32,6 @@ const FirstScreen = ({ navigation }) => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  // const data = [
-  //     { id: '1', title: 'Song 1', artist: 'Artist 1', image: require('./assets/cover/1.jpg'),  },
-  //     { id: '2', title: 'Song 2', artist: 'Artist 2', image: require('./assets/cover/2.jpg'),  },
-  //     { id: '3', title: 'Song 3', artist: 'Artist 3', image: require('./assets/cover/3.jpg'),  },
-  //     { id: '4', title: 'Song 4', artist: 'Artist 4', image: require('./assets/cover/4.jpg'),  },
-  //     { id: '5', title: 'Song 5', artist: 'Artist 5', image: require('./assets/cover/5.jpg'),  },
-  //     { id: '6', title: 'Song 6', artist: 'Artist 6', image: require('./assets/cover/6.jpg'),  },
-  //     { id: '7', title: 'Song 7', artist: 'Artist 7', image: require('./assets/cover/7.jpg'),  },
-  //     { id: '8', title: 'Song 8', artist: 'Artist 8', image: require('./assets/cover/8.jpg'),  },
-  //     { id: '9', title: 'Song 9', artist: 'Artist 9', image: require('./assets/cover/9.jpg'),  },
-  //     { id: '10', title: 'Song 10', artist: 'Artist 10', image: require('./assets/cover/10.jpg'),  },
-  //     // { id: '1', title: 'Song1', image: require('./assets/cover/11.jpg'),  },
-  //   ];
-
-
   const renderItem = ({ item }) => (
     <TouchableOpacity
       style={styles.listItemContainer}
@@ -100,7 +85,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   headerContainer: {
-    // backgroundColor: '#f0f0f0',
     justifyContent: 'flex-start',
     paddingVertical: 12,
     marginTop: 8,
@@ -117,7 +101,7 @@ const styles = StyleSheet.create({
   listItemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0', // Hintergrundfarbe der Einträge
+    backgroundColor: '#FFFFFF',
     padding: 10,
     paddingLeft: 0,
     marginBottom: 1,
@@ -157,7 +141,7 @@ const styles = StyleSheet.create({
     color: '#000000',
   },
   idContainer: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#FFFFFF',
     padding: 8,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
@@ -177,7 +161,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   navigationContainer: {
-    // backgroundColor: '#f0f0f0',
+    //backgroundColor: '#ffffff',
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 24,

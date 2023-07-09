@@ -14,6 +14,19 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-AssessmentSteven-AssessmentStevenTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AssessmentSteven-AssessmentStevenTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9F544A7B2A5B5E9400233011 /* musicone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A6E2A5B5E9400233011 /* musicone.mp3 */; };
+		9F544A7C2A5B5E9400233011 /* musicsix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A6F2A5B5E9400233011 /* musicsix.mp3 */; };
+		9F544A7D2A5B5E9400233011 /* musiceight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A702A5B5E9400233011 /* musiceight.mp3 */; };
+		9F544A7E2A5B5E9400233011 /* musicseven.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A712A5B5E9400233011 /* musicseven.mp3 */; };
+		9F544A7F2A5B5E9400233011 /* musicthree.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A722A5B5E9400233011 /* musicthree.mp3 */; };
+		9F544A802A5B5E9400233011 /* musiceleven.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A732A5B5E9400233011 /* musiceleven.mp3 */; };
+		9F544A812A5B5E9400233011 /* musicfive.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A742A5B5E9400233011 /* musicfive.mp3 */; };
+		9F544A822A5B5E9400233011 /* musictwelve.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A752A5B5E9400233011 /* musictwelve.mp3 */; };
+		9F544A832A5B5E9400233011 /* musicfour.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A762A5B5E9400233011 /* musicfour.mp3 */; };
+		9F544A842A5B5E9400233011 /* musicthirteen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A772A5B5E9400233011 /* musicthirteen.mp3 */; };
+		9F544A852A5B5E9400233011 /* musictwo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A782A5B5E9400233011 /* musictwo.mp3 */; };
+		9F544A862A5B5E9400233011 /* musicnine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A792A5B5E9400233011 /* musicnine.mp3 */; };
+		9F544A872A5B5E9400233011 /* musicten.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F544A7A2A5B5E9400233011 /* musicten.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +56,19 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-AssessmentSteven.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AssessmentSteven.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AssessmentSteven/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-AssessmentSteven-AssessmentStevenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssessmentSteven-AssessmentStevenTests.release.xcconfig"; path = "Target Support Files/Pods-AssessmentSteven-AssessmentStevenTests/Pods-AssessmentSteven-AssessmentStevenTests.release.xcconfig"; sourceTree = "<group>"; };
+		9F544A6E2A5B5E9400233011 /* musicone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musicone.mp3; path = ../src/assets/music/musicone.mp3; sourceTree = "<group>"; };
+		9F544A6F2A5B5E9400233011 /* musicsix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musicsix.mp3; path = ../src/assets/music/musicsix.mp3; sourceTree = "<group>"; };
+		9F544A702A5B5E9400233011 /* musiceight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musiceight.mp3; path = ../src/assets/music/musiceight.mp3; sourceTree = "<group>"; };
+		9F544A712A5B5E9400233011 /* musicseven.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musicseven.mp3; path = ../src/assets/music/musicseven.mp3; sourceTree = "<group>"; };
+		9F544A722A5B5E9400233011 /* musicthree.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musicthree.mp3; path = ../src/assets/music/musicthree.mp3; sourceTree = "<group>"; };
+		9F544A732A5B5E9400233011 /* musiceleven.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musiceleven.mp3; path = ../src/assets/music/musiceleven.mp3; sourceTree = "<group>"; };
+		9F544A742A5B5E9400233011 /* musicfive.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musicfive.mp3; path = ../src/assets/music/musicfive.mp3; sourceTree = "<group>"; };
+		9F544A752A5B5E9400233011 /* musictwelve.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musictwelve.mp3; path = ../src/assets/music/musictwelve.mp3; sourceTree = "<group>"; };
+		9F544A762A5B5E9400233011 /* musicfour.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musicfour.mp3; path = ../src/assets/music/musicfour.mp3; sourceTree = "<group>"; };
+		9F544A772A5B5E9400233011 /* musicthirteen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musicthirteen.mp3; path = ../src/assets/music/musicthirteen.mp3; sourceTree = "<group>"; };
+		9F544A782A5B5E9400233011 /* musictwo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musictwo.mp3; path = ../src/assets/music/musictwo.mp3; sourceTree = "<group>"; };
+		9F544A792A5B5E9400233011 /* musicnine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musicnine.mp3; path = ../src/assets/music/musicnine.mp3; sourceTree = "<group>"; };
+		9F544A7A2A5B5E9400233011 /* musicten.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musicten.mp3; path = ../src/assets/music/musicten.mp3; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -116,6 +142,19 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				9F544A702A5B5E9400233011 /* musiceight.mp3 */,
+				9F544A732A5B5E9400233011 /* musiceleven.mp3 */,
+				9F544A742A5B5E9400233011 /* musicfive.mp3 */,
+				9F544A762A5B5E9400233011 /* musicfour.mp3 */,
+				9F544A792A5B5E9400233011 /* musicnine.mp3 */,
+				9F544A6E2A5B5E9400233011 /* musicone.mp3 */,
+				9F544A712A5B5E9400233011 /* musicseven.mp3 */,
+				9F544A6F2A5B5E9400233011 /* musicsix.mp3 */,
+				9F544A7A2A5B5E9400233011 /* musicten.mp3 */,
+				9F544A772A5B5E9400233011 /* musicthirteen.mp3 */,
+				9F544A722A5B5E9400233011 /* musicthree.mp3 */,
+				9F544A752A5B5E9400233011 /* musictwelve.mp3 */,
+				9F544A782A5B5E9400233011 /* musictwo.mp3 */,
 				13B07FAE1A68108700A75B9A /* AssessmentSteven */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* AssessmentStevenTests */,
@@ -242,8 +281,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F544A852A5B5E9400233011 /* musictwo.mp3 in Resources */,
+				9F544A7D2A5B5E9400233011 /* musiceight.mp3 in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				9F544A7B2A5B5E9400233011 /* musicone.mp3 in Resources */,
+				9F544A872A5B5E9400233011 /* musicten.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9F544A7E2A5B5E9400233011 /* musicseven.mp3 in Resources */,
+				9F544A802A5B5E9400233011 /* musiceleven.mp3 in Resources */,
+				9F544A7C2A5B5E9400233011 /* musicsix.mp3 in Resources */,
+				9F544A862A5B5E9400233011 /* musicnine.mp3 in Resources */,
+				9F544A842A5B5E9400233011 /* musicthirteen.mp3 in Resources */,
+				9F544A812A5B5E9400233011 /* musicfive.mp3 in Resources */,
+				9F544A7F2A5B5E9400233011 /* musicthree.mp3 in Resources */,
+				9F544A822A5B5E9400233011 /* musictwelve.mp3 in Resources */,
+				9F544A832A5B5E9400233011 /* musicfour.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

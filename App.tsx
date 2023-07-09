@@ -31,9 +31,15 @@ function App(): JSX.Element {
       <Stack.Navigator initialRouteName="Top 100">
         <Stack.Screen name="Top 100"
           component={FirstScreen}
+          options={{ headerShown: false }}
         />
         <Stack.Screen name="Detail"
           component={DetailScreen}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: '',
+            headerStyle: { backgroundColor: '#f0f0f0' }
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

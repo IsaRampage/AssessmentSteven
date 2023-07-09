@@ -6,17 +6,20 @@ import {
   Image,
   useColorScheme,
   View,
-  FlatList,
   TouchableOpacity,
 } from 'react-native';
+import {
+  useState
+} from 'react'
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Icon from 'react-native-vector-icons/Feather';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
+import images from "./assets/images";
+import Sound from 'react-native-sound';
 
 const data = require('./content.json');
 
@@ -27,129 +30,125 @@ const DetailScreen = ({ navigation, route }) => {
     navigation.goBack();
   };
 
+  // Sound.setCategory('Playback');
+
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const playSound = () => {
+    if (isPlaying) {
+      setIsPlaying(false)
+    } else {
+      // Initialisiere den Sound
+      const sound = new Sound(item.sound, Sound.MAIN_BUNDLE, (error) => {
+        if (error) {
+          console.log('Fehler beim Laden des Sounds', error);
+        } else {
+          // Spiele den Sound ab
+          sound.play(() => {
+            // Sound ist beendet
+            sound.release();
+            setIsPlaying(false);
+          });
+        }
+      });
+
+
+      setIsPlaying(true);
+    }
+
+  };
+
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-   const renderItem = ({ item }) => (
-        <View style={styles.listItemContainer}>
-        <View style={styles.idContainer}>
-          <Text style={styles.soundID}>{item.id}</Text>
-        </View>
-        <View style={styles.imageContainer}>
-          <Image source={{ uri: item.image }} style={styles.image} />
-        </View>
-        <View>
-          <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">{item.title}</Text>
-          <Text style={styles.artist} numberOfLines={1} ellipsizeMode="tail">{item.artist}</Text>
-        </View>
-        <Text style={styles.heartLike}>♡</Text>
-      </View>
-    );
-
   return (
-    <SafeAreaView style={{ flex: 1, paddingHorizontal: 16 }}>
+    <SafeAreaView style={styles.container}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={isDarkMode ? '#000000' : '#ffffff'}
       />
-      <View style={styles.container}>
-      <TouchableOpacity onPress={pressGoBack} style={styles.backButton}>
-      </TouchableOpacity>
+      <View style={styles.contentContainer}>
+        <TouchableOpacity onPress={pressGoBack} style={styles.backButton}></TouchableOpacity>
         <View style={styles.creditContainer}>
           <Text style={styles.creditText}>◯ 500</Text>
         </View>
-        <View style={styles.headerContainer}>
-          <Text style={styles.headline}>{item => item.title}</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.artist}>{item.artist}</Text>
         </View>
-        <FlatList
-          data={data}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-          contentContainerStyle={styles.listContainer}
-        />
-      </View><View style={styles.navigationContainer}></View>
+        <View style={styles.cardContainer}>
+          <View style={styles.imageContainer}>
+            <Image source={images[item.image]} style={styles.image} />
+          </View>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              style={styles.playButton}
+              onPress={playSound}
+            >
+              <Text style={styles.playButtonText}>{isPlaying ? 'Playing...' : 'Play'}</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+      <View style={styles.navigationContainer}>
+        {/* <FontAwesome name="search" size={24} color="black" /> */}
+      </View>
     </SafeAreaView>
   );
 };
+
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      paddingHorizontal: 16,
-    },
-    backButton: {
-      alignSelf: 'flex-start',
-      paddingVertical: 8,
-      paddingHorizontal: 12,
-      backgroundColor: '#f0f0f0',
-      borderRadius: 5,
-      marginBottom: 16,
-    },
-    headerContainer: {
-     // backgroundColor: '#f0f0f0',
-      justifyContent: 'flex-start',
-      paddingVertical: 12,
-      marginTop: 8,
-    },
-    headline: {
-      fontSize: 32,
-      fontWeight: '700',
-    },  
-    listContainer: {
-      borderRadius: 10,
-      overflow: 'hidden',
-      marginTop: 8,
-    },
-    listItemContainer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#f0f0f0', // Hintergrundfarbe der Einträge
-      padding: 10,
-      paddingLeft: 0,
-      marginBottom: 1,
-    },
-    imageContainer: {
-      width: 50,
-      height: 50,
-      marginLeft: 10,
-      marginRight: 10,
-      borderRadius: 10,
-      shadowColor: '#000',
-      shadowOpacity: 0.5,
-      shadowOffset: {
-        width: 2,
-        height: 2,
-      },
-      shadowRadius: 4,
-      elevation: 4,
-    },
-    image: {
-      width: 50,
-      height: 50,
-      borderRadius: 10,
-    },
-    title: {
-      fontSize: 18,
-      fontWeight: '600',
-    },
-    artist: {
-      fontSize: 14,
-      fontWeight: '400',
-      marginTop: 4,
-    },
-    soundID: {
-      fontSize: 10,
-      fontWeight: '600',
-      color: '#000000',
-    },
-    idContainer: {
-      backgroundColor: '#f0f0f0',
-      padding: 8,
-      borderTopRightRadius: 10,
-      borderBottomRightRadius: 10,
-      shadowColor: '#000',
+  container: {
+    flex: 1,
+    paddingHorizontal: 16,
+  },
+  backButton: {
+    position: 'absolute',
+    top: 16,
+    left: 16,
+    width: 40,
+    height: 40,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 5,
+  },
+  creditContainer: {
+    position: 'absolute',
+    top: StatusBar.currentHeight + 16,
+    right: 16,
+    backgroundColor: 'red',
+    borderRadius: 12,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+  },
+  creditText: {
+    color: 'white',
+    fontSize: 12,
+    fontWeight: '700',
+  },
+  titleContainer: {
+    marginTop: 8,
+    marginLeft: 16,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: '700',
+  },
+  artist: {
+    fontSize: 16,
+    fontWeight: '400',
+    marginTop: 4,
+  },
+  cardContainer: {
+    height: 500,
+    marginLeft: 16,
+    marginRight: 16,
+    marginTop: 8,
+    backgroundColor: '#ffffff',
+    borderRadius: 10,
+    shadowColor: '#000',
     shadowOpacity: 0.5,
     shadowOffset: {
       width: 2,
@@ -158,33 +157,46 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 4,
   },
-    heartLike: {
-      fontSize: 25,
-      fontWeight: '600',
-      marginLeft: 'auto',
-      marginRight: 5,
+  imageContainer: {
+    width: 300,
+    height: 300,
+    marginTop: 32,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOpacity: 0.5,
+    shadowOffset: {
+      width: 2,
+      height: 2,
     },
-    navigationContainer: {
-      // backgroundColor: '#f0f0f0',
-       justifyContent: 'center',
-       alignItems: 'center',
-       paddingVertical: 24,
-     },
-     creditContainer: {
-      position: 'absolute',
-      top: 0,
-      right: 16,
-      backgroundColor: 'red',
-      borderRadius: 12,
-      paddingVertical: 4,
-      paddingHorizontal: 8,
-      marginTop: StatusBar.currentHeight,
-    },
-    creditText: {
-      color: 'white',
-      fontSize: 12,
-      fontWeight: '700',
-    },
-  });
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
+  },
+  buttonContainer: {
+    alignItems: 'center',
+    marginTop: 32,
+  },
+  playButton: {
+    backgroundColor: '#f0f0f0',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+  },
+  playButtonText: {
+    color: '#000000',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  navigationContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 24,
+  },
+});
 
 export default DetailScreen;
