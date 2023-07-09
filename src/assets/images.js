@@ -1,0 +1,1 @@
+exports.first = require("./cover/first.jpg")
